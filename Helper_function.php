@@ -20,3 +20,18 @@ function filter_array_by_value_of_key($arr, $index = '', $value = '') {
     return isset($val[$index]) && ($val[$index] === $value);
   }, ARRAY_FILTER_USE_BOTH);
 }
+
+
+/**
+ * Helper Function to get array Values.
+ * @param array $data
+ * @param bool  $index
+ *
+ * @return array|mixed
+ */
+function get_array_values($data = array(), $index = FALSE) {
+  if ($index !== FALSE && is_int($index) && $index <= count($data)) {
+    return $data[$index];
+  }
+  return $data;
+}
